@@ -5,7 +5,7 @@
     <string name="ideal_weight">Peso Ideal</string>
     <string name="records">Histórico</string>
 
-    <string name="imc_response">Imc: %1$.2f</string>
+    <string name="imc_response">IMC: %1$.2f</string>
 
     <string name="imc_desc"><b>IMC</b> significa Índice de Massa Corporal e trata-se de uma medida do peso de cada pessoa, sendo uma relação entre a
         massa da pessoa e a sua altura ao quadrado.</string>

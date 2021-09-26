@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/Desktop/Projetos Mobile/FitnessTracker/app/src/main/res/drawable/bg_custom_dialog.xml" value="0.24114583333333334" />
         <entry key="..\:/Users/User/Desktop/Projetos Mobile/FitnessTracker/app/src/main/res/drawable/bg_main_item.xml" value="0.24114583333333334" />
         <entry key="..\:/Users/User/Desktop/Projetos Mobile/FitnessTracker/app/src/main/res/layout/activity_imc.xml" value="0.22" />
         <entry key="..\:/Users/User/Desktop/Projetos Mobile/FitnessTracker/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/User/Desktop/Projetos Mobile/FitnessTracker/app/src/main/res/layout/activity_tmb.xml" value="0.225" />
+        <entry key="..\:/Users/User/Desktop/Projetos Mobile/FitnessTracker/app/src/main/res/layout/custom_dialog.xml" value="0.225" />
         <entry key="..\:/Users/User/Desktop/Projetos Mobile/FitnessTracker/app/src/main/res/layout/main_item.xml" value="0.225" />
       </map>
     </option>

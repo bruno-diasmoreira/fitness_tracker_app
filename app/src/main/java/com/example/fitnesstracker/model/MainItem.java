@@ -1,4 +1,4 @@
-package com.example.fitnesstracker;
+package com.example.fitnesstracker.model;
 
 public class MainItem {
 

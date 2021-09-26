@@ -4,19 +4,24 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ImcActivity extends AppCompatActivity {
 
 
     private EditText editWeight, editHeight;
-    private Button btnCalc;
+
+    private Dialog dialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +31,7 @@ public class ImcActivity extends AppCompatActivity {
 
         editWeight = findViewById(R.id.edit_weight);
         editHeight = findViewById(R.id.edit_height);
-        btnCalc = findViewById(R.id.btn_calc);
+        Button btnCalc = findViewById(R.id.btn_calc);
 
 
         btnCalc.setOnClickListener(view -> {
@@ -44,14 +49,32 @@ public class ImcActivity extends AppCompatActivity {
 
             int response = imcResponse(calc);
 
-            AlertDialog alertDialog = new AlertDialog.Builder(ImcActivity.this).setTitle(getString(R.string.imc_response, calc))
-                    .setMessage(response)
-                    .setPositiveButton(android.R.string.ok, (dialogInterface, i) -> {
 
-                    })
-                    .create();
+            dialog = new Dialog(ImcActivity.this);
+            dialog.setContentView(R.layout.custom_dialog);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.bg_custom_dialog));
+            }
 
-            alertDialog.show();
+            TextView imcCalcRes = dialog.findViewById(R.id.imc_calc_res);
+            TextView imcResponseRes = dialog.findViewById(R.id.imc_response_res);
+            Button save_imc = dialog.findViewById(R.id.save_imc);
+            Button ok_imc = dialog.findViewById(R.id.ok_imc);
+
+            imcCalcRes.setText(getString(R.string.imc_response,calc));
+            imcResponseRes.setText(response);
+
+
+            save_imc.setOnClickListener(view1 -> {
+                dialog.dismiss();
+            });
+
+            ok_imc.setOnClickListener(view1 -> {
+                dialog.dismiss();
+            });
+
+            dialog.show();
+
 
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(editHeight.getWindowToken(), 0);

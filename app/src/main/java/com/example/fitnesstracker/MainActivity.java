@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.fitnesstracker.model.MainItem;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         mainItems.add(new MainItem(1,R.drawable.fita_metrica,R.string.imc_title));
         mainItems.add(new MainItem(2,R.drawable.tmb_icon,R.string.tmb_title));
         mainItems.add(new MainItem(3,R.drawable.balance,R.string.ideal_weight));
-        mainItems.add(new MainItem(4,R.drawable.records,R.string.records));
+        //mainItems.add(new MainItem(4,R.drawable.records,R.string.records));
 
         MainAdapter mainAdapter = new MainAdapter(getApplicationContext(),mainItems);
 

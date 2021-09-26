@@ -11,6 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fitnesstracker.model.MainItem;
+import com.example.fitnesstracker.model.OnItemClickListener;
+
 import java.util.List;
 
 
