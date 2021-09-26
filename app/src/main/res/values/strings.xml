@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">FitnessTracker</string>
+    <string name="imc_title">Índice de Massa Corporal</string>
+    <string name="tmb_title">Taxa Metabólica Basal</string>
+    <string name="ideal_weight">Peso Ideal</string>
+    <string name="records">Histórico</string>
+
+    <string name="imc_response">Imc: %1$.2f</string>
+
+    <string name="imc_desc"><b>IMC</b> significa Índice de Massa Corporal e trata-se de uma medida do peso de cada pessoa, sendo uma relação entre a
+        massa da pessoa e a sua altura ao quadrado.</string>
+    <string name="imc_weight_hint">Peso (kg)</string>
+    <string name="imc_height_hint">Altura (cm)</string>
+    <string name="btn_calc">Calcular</string>
+    <string name="imc_subtitle">Preencha os campos abaixo com peso e altura.</string>
+
+
+
+    <string name="magreza">Magreza</string>
+    <string name="pesoNormal">Normal</string>
+    <string name="sobrepeso">Sobrepeso</string>
+    <string name="obesidade">Obesidade</string>
+    <string name="obesidadeGrave">Obesidade Grave</string>
+
+
+
 </resources>

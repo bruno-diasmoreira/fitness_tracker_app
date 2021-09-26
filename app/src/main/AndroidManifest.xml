@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessTracker">
         <activity
+            android:name=".ImcActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TmbActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

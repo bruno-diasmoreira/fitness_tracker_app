@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="20dp">
-
+    >
 
     <LinearLayout
+        android:id="@+id/btn_item"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
@@ -16,13 +16,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:elevation="20dp"
             app:cardCornerRadius="5dp"
-            app:cardElevation="15dp"
+            app:cardElevation="10dp"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
@@ -30,19 +28,26 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <ImageView
+                    android:id="@+id/item_img"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:src="@drawable/balance" />
 
                 <TextView
+                    android:id="@+id/item_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Indice de Massa Corporal"
-                    android:textSize="20sp" />
+                    android:text="@string/imc_title"
+                    android:textSize="15sp"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="4sp"
+                    />
             </LinearLayout>
+
 
         </androidx.cardview.widget.CardView>
 
