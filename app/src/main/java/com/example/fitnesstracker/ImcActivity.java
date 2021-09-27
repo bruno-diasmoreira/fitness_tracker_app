@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnesstracker.data.SqlHelper;
+
 public class ImcActivity extends AppCompatActivity {
 
 
@@ -61,11 +63,18 @@ public class ImcActivity extends AppCompatActivity {
             Button save_imc = dialog.findViewById(R.id.save_imc);
             Button ok_imc = dialog.findViewById(R.id.ok_imc);
 
-            imcCalcRes.setText(getString(R.string.imc_response,calc));
+            imcCalcRes.setText(getString(R.string.imc_response, calc));
             imcResponseRes.setText(response);
 
 
             save_imc.setOnClickListener(view1 -> {
+
+                long calcId = SqlHelper.getInstance(ImcActivity.this).addItem("imc", calc);
+
+                if (calcId > 0) {
+                    Toast.makeText(getApplicationContext(), "Resultado salvo com sucesso !!", Toast.LENGTH_SHORT).show();
+                }
+
                 dialog.dismiss();
             });
 
