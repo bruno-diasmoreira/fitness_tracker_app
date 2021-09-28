@@ -1,14 +1,18 @@
 package com.example.fitnesstracker;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fitnesstracker.data.SqlHelper;
 import com.example.fitnesstracker.model.Register;
 
 import java.text.SimpleDateFormat;
@@ -38,6 +42,7 @@ public class ListResultAdapter extends RecyclerView.Adapter<ListResultAdapter.Vi
 
         holder.bind(register);
 
+
     }
 
     @Override
@@ -57,12 +62,30 @@ public class ListResultAdapter extends RecyclerView.Adapter<ListResultAdapter.Vi
             TextView dateImcList = itemView.findViewById(R.id.dateImcList);
 
 
+            CardView cardView = itemView.findViewById(R.id.cardViewItem);
+            cardView.setOnLongClickListener(view -> {
+
+                AlertDialog alertDialog = new AlertDialog.Builder(context)
+                        .setMessage(context.getString(R.string.delete_message))
+                        .setNegativeButton("Cancelar", (dialog, i) -> dialog.dismiss())
+                        .setPositiveButton("Excluir", (dialog, i) -> {
+
+                            SqlHelper.getInstance(context).deleteById(register.getId());
+                            registerList.remove(registerList.get(getAdapterPosition()));
+                            notifyDataSetChanged();
+
+                            Toast.makeText(context, "Excluido com sucesso !!", Toast.LENGTH_SHORT).show();
+                        }).create();
+
+                alertDialog.show();
+
+                return false;
+            });
 
 
+            resultImcList.setText(context.getString((register.getType().toString().equalsIgnoreCase("imc") ? R.string.imc_response : R.string.tmb_response), register.getResult()));
 
-            resultImcList.setText(context.getString((register.getType().toString().equalsIgnoreCase("imc")?R.string.imc_response : R.string.tmb_response),register.getResult()));
-
-            dateImcList.setText("Data: "+register.getCreated_date());
+            dateImcList.setText("Data: " + register.getCreated_date());
 
 
         }

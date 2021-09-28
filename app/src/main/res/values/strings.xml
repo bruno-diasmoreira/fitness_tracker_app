@@ -27,4 +27,7 @@
     <string name="age_hint">Idade</string>
 
 
+    <string name="delete_message">Deseja excluir este item ?</string>
+
+
 </resources>

@@ -4,12 +4,14 @@ public class Register {
 
     private String type,created_date;
     private double result;
+    private int id;
 
 
     public Register() {
     }
 
-    public Register(String type, String created_date, double result) {
+    public Register(int id, String type, String created_date, double result) {
+        this.id = id;
         this.type = type;
         this.created_date = created_date;
         this.result = result;
@@ -37,5 +39,13 @@ public class Register {
 
     public void setResult(double result) {
         this.result = result;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

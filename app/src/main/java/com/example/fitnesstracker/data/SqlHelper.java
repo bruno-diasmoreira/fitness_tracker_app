@@ -56,6 +56,30 @@ public class SqlHelper extends SQLiteOpenHelper {
     }
 
 
+    public void deleteById(int id){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        try {
+            db.beginTransaction();
+
+            String sql = "DELETE FROM "+TABLE_NAME+
+                    " WHERE id = "+id;
+
+            db.execSQL(sql);
+            db.setTransactionSuccessful();
+
+        } catch (Exception e) {
+
+            Log.e("Sqlite", "Error: " + e.getMessage(), e);
+
+        } finally {
+            if (db.isOpen())
+                db.endTransaction();
+
+        }
+    }
+
     public List<Register> getListRegisterBy(String type) {
 
         List<Register> registers = new ArrayList<>();
@@ -70,6 +94,8 @@ public class SqlHelper extends SQLiteOpenHelper {
                 do {
                     Register register = new Register();
 
+
+                    register.setId(cursor.getInt(0));
                     register.setType(cursor.getString(1));
                     register.setResult(cursor.getDouble(2));
                     register.setCreated_date(cursor.getString(3));

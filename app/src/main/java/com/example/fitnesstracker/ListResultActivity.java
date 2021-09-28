@@ -21,6 +21,7 @@ public class ListResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_result);
 
         RecyclerView rvResult = findViewById(R.id.rv_result_list);
+        
 
         String type = getIntent().getExtras().getString("result");
 
