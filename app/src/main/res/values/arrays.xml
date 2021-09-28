@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="spinner_tmb">
+
+        <item>Pouco ou nenhum excercicio</item>
+        <item>Atividade Ligeira</item>
+        <item>Atividade Moderada</item>
+        <item>Atividade Intensa</item>
+        <item>Atividade muito intensa</item>
+
+    </string-array>
+
+
+</resources>

@@ -13,6 +13,7 @@
     <string name="imc_height_hint">Altura (cm)</string>
     <string name="btn_calc">Calcular</string>
     <string name="imc_subtitle">Preencha os campos abaixo com peso e altura.</string>
+    <string name="tmb_subtitle">Preencha os campos abaixo com peso, altura e idade.</string>
 
 
     <string name="magreza">Magreza</string>
@@ -20,6 +21,9 @@
     <string name="sobrepeso">Sobrepeso</string>
     <string name="obesidade">Obesidade</string>
     <string name="obesidadeGrave">Obesidade Grave</string>
+
+    <string name="tmb_desc">A <b> Taxa de Metabolismo Basal</b>  é a quantidade mínima de calorias necessária para manter as funções vitais do organismo em repouso.</string>
+    <string name="age_hint">Idade</string>
 
 
 </resources>

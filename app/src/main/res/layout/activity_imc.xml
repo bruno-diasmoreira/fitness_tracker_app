@@ -17,12 +17,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:src="@drawable/ic_more_vert"
             android:layout_alignParentRight="true"
             android:layout_marginTop="15sp"
             android:layout_marginRight="15dp"
-            />
-
+            android:src="@drawable/ic_more_vert" />
 
 
         <LinearLayout
@@ -49,28 +47,27 @@
                 android:textStyle="bold" />
 
             <EditText
-                style="@style/EditTextForm"
                 android:id="@+id/edit_weight"
+                style="@style/EditTextForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/imc_weight_hint" />
 
             <EditText
-                style="@style/EditTextForm"
                 android:id="@+id/edit_height"
+                style="@style/EditTextForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/imc_height_hint" />
 
             <Button
                 android:id="@+id/btn_calc"
+                style="@style/ButtonCalc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/bg_main"
-                android:padding="13dp"
-                android:text="@string/btn_calc"
-                android:textColor="@color/white"
-                android:textSize="17sp" />
+
+                />
 
         </LinearLayout>
     </RelativeLayout>

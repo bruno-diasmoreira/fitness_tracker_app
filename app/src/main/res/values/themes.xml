@@ -28,6 +28,15 @@
         <item name="android:layout_marginBottom">40dp</item>
         <item name="android:inputType">number</item>
     </style>
-    
+
+    <style name="ButtonCalc">
+
+        <item name="android:padding">13dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:text">@string/btn_calc</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="SpinnerForm" parent="TextViewForm"/>
     
 </resources>

@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(MainActivity.this,ImcActivity.class));
                     break;
                 case 2:
+                    startActivity(new Intent(MainActivity.this,TmbActivity.class));
                     break;
                 case 3:
                     break;
