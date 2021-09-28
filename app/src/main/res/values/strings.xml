@@ -15,13 +15,11 @@
     <string name="imc_subtitle">Preencha os campos abaixo com peso e altura.</string>
 
 
-
     <string name="magreza">Magreza</string>
     <string name="pesoNormal">Normal</string>
     <string name="sobrepeso">Sobrepeso</string>
     <string name="obesidade">Obesidade</string>
     <string name="obesidadeGrave">Obesidade Grave</string>
-
 
 
 </resources>

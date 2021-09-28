@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessTracker">
         <activity
+            android:name=".ListResultActivity"
+            android:exported="true" />
+        <activity
             android:name=".ImcActivity"
             android:exported="true" />
         <activity

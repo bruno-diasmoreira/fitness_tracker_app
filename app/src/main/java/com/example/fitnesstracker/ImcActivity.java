@@ -1,17 +1,25 @@
 package com.example.fitnesstracker;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,11 +38,15 @@ public class ImcActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imc);
 
+        ImageView search = findViewById(R.id.search);
+
+        //barra para chamar o popup
+        popUpMenu(search);
+
 
         editWeight = findViewById(R.id.edit_weight);
         editHeight = findViewById(R.id.edit_height);
         Button btnCalc = findViewById(R.id.btn_calc);
-
 
         btnCalc.setOnClickListener(view -> {
 
@@ -66,13 +78,13 @@ public class ImcActivity extends AppCompatActivity {
             imcCalcRes.setText(getString(R.string.imc_response, calc));
             imcResponseRes.setText(response);
 
-
             save_imc.setOnClickListener(view1 -> {
 
                 long calcId = SqlHelper.getInstance(ImcActivity.this).addItem("imc", calc);
 
                 if (calcId > 0) {
                     Toast.makeText(getApplicationContext(), "Resultado salvo com sucesso !!", Toast.LENGTH_SHORT).show();
+                    openListResult();
                 }
 
                 dialog.dismiss();
@@ -91,6 +103,30 @@ public class ImcActivity extends AppCompatActivity {
 
         });
     }
+
+    private void popUpMenu(ImageView search) {
+        search.setOnClickListener(view -> {
+            PopupMenu popupMenu = new PopupMenu(ImcActivity.this, search);
+            popupMenu.inflate(R.menu.menu);
+            popupMenu.setOnMenuItemClickListener(menuItem -> {
+                switch (menuItem.getItemId()) {
+                    case R.id.menu_list:
+                        openListResult();
+                        return true;
+                    default:
+                        return false;
+                }
+            });
+            popupMenu.show();
+        });
+    }
+
+    private void openListResult() {
+        Intent intent = new Intent(ImcActivity.this, ListResultActivity.class);
+        intent.putExtra("result", "imc");
+        startActivity(intent);
+    }
+
 
     private double calculate(int peso, int altura) {
         return peso / (((double) altura / 100) * ((double) altura / 100));
@@ -117,4 +153,6 @@ public class ImcActivity extends AppCompatActivity {
                 !editWeight.getText().toString().startsWith("0") &&
                 !editHeight.getText().toString().startsWith("0"));
     }
+
+
 }
