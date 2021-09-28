@@ -56,7 +56,11 @@ public class ListResultAdapter extends RecyclerView.Adapter<ListResultAdapter.Vi
             TextView resultImcList = itemView.findViewById(R.id.resultImcList);
             TextView dateImcList = itemView.findViewById(R.id.dateImcList);
 
-            resultImcList.setText(context.getString(R.string.imc_response,register.getResult()));
+
+
+
+
+            resultImcList.setText(context.getString((register.getType().toString().equalsIgnoreCase("imc")?R.string.imc_response : R.string.tmb_response),register.getResult()));
 
             dateImcList.setText("Data: "+register.getCreated_date());
 

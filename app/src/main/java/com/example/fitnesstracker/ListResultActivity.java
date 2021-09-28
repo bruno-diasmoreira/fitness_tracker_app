@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.fitnesstracker.data.SqlHelper;
 import com.example.fitnesstracker.model.Register;
@@ -27,7 +28,7 @@ public class ListResultActivity extends AppCompatActivity {
 
         rvResult.setLayoutManager(new LinearLayoutManager(this));
 
-        ListResultAdapter listResultAdapter = new ListResultAdapter(ListResultActivity.this,registerList);
+        ListResultAdapter listResultAdapter = new ListResultAdapter(ListResultActivity.this, registerList);
 
         rvResult.setAdapter(listResultAdapter);
 

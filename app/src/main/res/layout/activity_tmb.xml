@@ -52,14 +52,14 @@
 
 
             <EditText
-                android:id="@+id/edit_tmb_height"
+                android:id="@+id/edit_tmb_weight"
                 style="@style/EditTextForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/imc_weight_hint" />
 
             <EditText
-                android:id="@+id/edit_tmb_weight"
+                android:id="@+id/edit_tmb_height"
                 style="@style/EditTextForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
